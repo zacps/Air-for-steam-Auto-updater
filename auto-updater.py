@@ -73,7 +73,8 @@ with zipfile.ZipFile(os.path.join(skinsDir, 'temp.zip')) as temp:
 	temp.extractall(os.path.join(steamDir, 'skins'))
 	temp.close()
 	os.remove(os.path.join(skinsDir, 'temp.zip'))
-	shutil.rmtree(os.path.join(skinsDir, 'Air for steam (Auto-updated)')) #Remove old skin to force rename
+	if os.path.exists(os.path.join(skinsDir, 'Air for steam (Auto-updated)')):
+		shutil.rmtree(os.path.join(skinsDir, 'Air for steam (Auto-updated)')) #Remove old skin to force rename
 	os.rename(os.path.join(skinsDir, skin.filename[:-1]), os.path.join(skinsDir, 'Air for steam (Auto-updated)'))
 
 print 'Skin downloaded and extracted. Preparing configuration...'

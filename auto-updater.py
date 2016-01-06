@@ -90,10 +90,10 @@ else:
 if os.path.isfile(config):
 	with open(config, 'r') as config:
 		if config.readline() == 'dark':
-			shutil.copytree(os.path.join(skinsDir, 'Air for steam (Auto-updated)','+Extras', 'Themes', 'Dark'), os.path.join(skinsDir, 'Air for steam (Auto-updated)'))
+			copytree(os.path.join(skinsDir, 'Air for steam (Auto-updated)','+Extras', 'Themes', 'Dark'), os.path.join(skinsDir, 'Air for steam (Auto-updated)'))
 			print 'Dark theme applied'
 		if config.readline() == 'square':
-			shutil.copytree(os.path.join(skinsDir, 'Air for steam (Auto-updated)','+Extras', 'Square Avatars'), os.path.join(skinsDir, 'Air for steam (Auto-updated)', 'Graphics'))
+			copytree(os.path.join(skinsDir, 'Air for steam (Auto-updated)','+Extras', 'Square Avatars'), os.path.join(skinsDir, 'Air for steam (Auto-updated)', 'Graphics'))
 			print 'Square avatars applied'
 else:
 	print 'No extras applied'
